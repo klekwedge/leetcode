@@ -3,6 +3,7 @@
  * @param {string} s
  * @return {number}
  */
+
 var countPrefixes = function (words, s) {
   let counter = 0;
 
