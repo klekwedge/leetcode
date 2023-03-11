@@ -3,15 +3,13 @@
  * @return {number}
  */
 var sumOfUnique = function (nums) {
-  const obj = {};
+  let sum = 0;
 
   for (let i = 0; i < nums.length; i++) {
-    obj[nums[i]] = obj[nums[i]] + 1 || 1;
+    if (nums.indexOf(nums[i]) === nums.lastIndexOf(nums[i])) {
+      sum += nums[i];
+    }
   }
 
-  const arr = Object.entries(obj)
-    .filter((item) => item[1] === 1)
-    .map((item) => +item[0]);
-
-  return arr.length ? arr.reduce((prev, next) => prev + next) : 0;
+  return sum;
 };
